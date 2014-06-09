@@ -1,0 +1,7 @@
+# Build folders
+_site/
+
+# Other files and folders
+*.iml
+*.lock
+.idea/
