@@ -57,7 +57,7 @@ ul{
 }
 
 .aside{
-    flex: 300px 300px 300px;
+    flex: 1 auto;
     background-color: pink;
 }
 

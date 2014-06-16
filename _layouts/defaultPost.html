@@ -38,7 +38,6 @@
             <aside class="aside">
                 <nav id="navPostImages">
                     <div class="fixedWrapper">
-                        {% assign modBy =
                         {% for post in site.posts %}
                             {% assign count = forloop.index0 | modulo:5 %}
                             {% if count == 0 %}
