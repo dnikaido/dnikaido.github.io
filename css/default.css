@@ -11,8 +11,44 @@
     flex: 1 100%;
 }
 
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .header{
     background-color: blue;
+}
+
+#navPostImages{
+    position: relative;
+}
+#navPostImages ul{
+    justify-content: flex-start;
+}
+
+.fixedWrapper{
+    position: absolute;
+}
+
+.thumbnailWrapper{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    opacity: .75;
+    float: left;
+    transition: width 1s ease, height 1s ease;
+}
+
+.thumbnailWrapper:hover {
+    opacity: 1.0;
+    height: 100px;
+    width: 100px;
+}
+
+.nav{
+    background-color: yellow;
 }
 
 .main{
@@ -20,15 +56,12 @@
     background-color: red;
 }
 
+.aside{
+    flex: 300px 300px 300px;
+    background-color: pink;
+}
+
 .footer{
     background-color: green;
-}
-
-.nav{
-    background-color: yellow;
-}
-
-.aside{
-    flex: 1 auto;
-    background-color: pink;
+    text-align: center;
 }

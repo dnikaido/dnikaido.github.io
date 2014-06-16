@@ -16,8 +16,8 @@
             <nav id="navMenu" class="nav">
                 <ul>
                     <li><a href="/">Newest</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Request</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Request</a></li>
                 </ul>
             </nav>
 
@@ -27,7 +27,7 @@
                 </section>
 
                 <section id="mapImage" class="section">
-                    <img src="/img/{{ page.mapImage }}"/>
+                    <img src="{{ page.mapImage }}"/>
                 </section>
 
                 <section id="mapDescription" class="section">
@@ -37,22 +37,33 @@
 
             <aside class="aside">
                 <nav id="navPostImages">
-                    <ul>
+                    <div class="fixedWrapper">
+                        {% assign modBy =
                         {% for post in site.posts %}
-                            <li>
-                                <a href="{{ post.url }}">
-                                    <h3>{{ post.title }}</h3>
-                                </a>
-                            </li>
+                            {% assign count = forloop.index0 | modulo:5 %}
+                            {% if count == 0 %}
+                            <ul>
+                            {% endif %}
+                                <li>
+                                    <div class="thumbnailWrapper">
+                                        <a href="{{ post.url }}">
+                                            <img class="thumbnail" src="{{ page.mapImage }}" />
+                                        </a>
+                                    </div>
+                                </li>
+                            {% if count == 4 %}
+                            </ul>
+                            {% endif %}
                         {% endfor %}
-                    </ul>
+                        </ul>
+                    </div>
                 </nav>
             </aside>
 
             <nav id="navPosts" class="nav">
                 <ul>
-                    <li><a href="/"><< Next</a></li>
-                    <li><a href="/">Previous >></a></li>
+                    <li><a href="#"><< Previous</a></li>
+                    <li><a href="#">Next >></a></li>
                 </ul>
             </nav>
 

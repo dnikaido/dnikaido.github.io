@@ -1,6 +1,6 @@
 ---
 layout: defaultPost
-title: First Post
+title: Second Post
 
 mapTitle: San Antonio
 mapImage: /img/san-antonio-map.gif
