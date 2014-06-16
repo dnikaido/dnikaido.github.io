@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> {% if page.title %} {{ page.title }} | {% endif %} Kind Maps </title>
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/default.css" />
+        <link rel="stylesheet" href="/css/defaultPost.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <img src="/img/banner.jpg"/>
+            </header>
+
+            <nav id="navMenu" class="nav">
+                <ul>
+                    <li><a href="/">Newest</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Request</a></li>
+                </ul>
+            </nav>
+
+            <article class="main">
+                <section id="mapTitle" class="section">
+                    <h2>{{ page.mapTitle }}</h2>
+                </section>
+
+                <section id="mapImage" class="section">
+                    <img src="/img/{{ page.mapImage }}"/>
+                </section>
+
+                <section id="mapDescription" class="section">
+                    {{ content }}
+                </section>
+            </article>
+
+            <aside class="aside">
+                <nav id="navPostImages">
+                    <ul>
+                        {% for post in site.posts %}
+                            <li>
+                                <a href="{{ post.url }}">
+                                    <h3>{{ post.title }}</h3>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </aside>
+
+            <nav id="navPosts" class="nav">
+                <ul>
+                    <li><a href="/"><< Next</a></li>
+                    <li><a href="/">Previous >></a></li>
+                </ul>
+            </nav>
+
+            <footer class="footer">
+                <p>@copy; Kind Maps 2014 | All Rights Reserved.</p>
+            </footer>
+        </div>
+    </body>
+</html>
